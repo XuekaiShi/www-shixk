@@ -17,6 +17,10 @@
   /* background-color: red */
 }
 
+span{
+  margin-left: 0.2em;
+}
+
 i {
   color: var(--color-text);
   display: flex;
