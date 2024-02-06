@@ -3,26 +3,31 @@
     <i>
       <slot name="icon"></slot>
     </i>
-    <h3>
+    <span>
       <slot name="heading"></slot>
-    </h3>
+    </span>
   </div>
 </template>
 <style scoped>
 .item {
+  cursor: pointer;
   user-select: none;
   display: flex;
   align-items: center;
-  /* width: 100px;
-  height: 100px; */
   /* background-color: red */
 }
-i{
+
+i {
   color: var(--color-text);
   display: flex;
   place-items: center;
   place-content: center;
-  width: 1.17rem;
-  height: 1.17rem;
+  width: 1em;
+  height: 1em;
 }
-</style>
+
+@media (max-width: 720px) {
+  span {
+    display: none;
+  }
+}</style>

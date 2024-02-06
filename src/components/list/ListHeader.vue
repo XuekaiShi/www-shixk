@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRoute,useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import ProfilePhoto from '../ProfilePhoto.vue';
 import ListItem from './ListItem.vue';
 import IconArchiveLine from '../icons/IconArchiveLine.vue';
@@ -21,10 +21,22 @@ const goTo = (path: string) => {
       <ProfilePhoto></ProfilePhoto>
     </div>
     <div class="right">
-      <h1 v-if="route.name === 'all'">All</h1>
-      <h1 v-if="route.name === 'blog'">Blog</h1>
-      <h1 v-if="route.name === 'notes'">Notes</h1>
-      <h1 v-if="route.name === 'more'">More</h1>
+      <template v-if="route.name === 'all'">
+        <h1>All</h1>
+        <p class="info">Here is all my blogs and notes sorded by date.</p>
+      </template>
+      <template v-if="route.name === 'blog'">
+        <h1>Blog</h1>
+        <p class="info">Here is all my blogs and notes sorded by date.</p>
+      </template>
+      <template v-if="route.name === 'notes'">
+        <h1>Notes</h1>
+        <p class="info">Here is all my blogs and notes sorded by date.</p>
+      </template>
+      <template v-if="route.name === 'more'">
+        <h1>More</h1>
+        <p class="info">Here is all my blogs and notes sorded by date.</p>
+      </template>
       <div class="nav">
         <ListItem @click="goTo('/')">
           <template #icon>
@@ -74,16 +86,50 @@ const goTo = (path: string) => {
 header {
   display: flex;
   place-items: center;
-  border-bottom: 1px solid var(--color-info-1);
+  --img-size: 6rem;
+  --header-margin: 0.6rem;
+  margin-bottom: 1rem;
+  padding: var(--header-margin) 0;
+  border-bottom: 2px solid var(--color-text);
 }
 
 img {
-  width: 50px;
-  height: 50px;
+  width: var(--img-size);
+  height: var(--img-size);
   border-radius: 50%;
 }
-.nav{
-  display: flex;
 
+.right {
+  height: var(--img-size);
+  margin-left: var(--header-margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-</style>
+
+.info {
+  color: var(--color-info-1);
+}
+
+.nav {
+  display: flex;
+}
+
+.item {
+  margin-left: var(--header-margin);
+  margin-right: var(--header-margin);
+}
+
+.item:first-of-type {
+  margin-left: 0;
+}
+
+.item:last-of-type {
+  margin-right: 0;
+}
+
+@media (min-width: 720px) {
+  header {
+    padding: var(--header-margin);
+  }
+}</style>
