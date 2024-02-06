@@ -25,6 +25,11 @@ const router = createRouter({
       name: 'notes',
       component: () => import('../views/list/NotesView.vue')
     },
+    {
+      path: '/more',
+      name: 'more',
+      component: () => import('../views/list/MoreView.vue')
+    },
     { path: '/:pathMatch(.*)', component: NotFound }
   ]
 })
