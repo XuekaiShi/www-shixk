@@ -18,6 +18,7 @@ header {
   /* background-color: rgb(240, 155, 255); */
   --img-size: 10rem;
   --header-margin: var(--homeview-gap);
+  user-select: none;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--color-info-1);
 }

@@ -35,6 +35,7 @@ import IconRSS from '../icons/IconRSS.vue';
 
 <style scoped>
 h1 {
+  user-select: text;
   font-size: 3.6rem;
 }
 
