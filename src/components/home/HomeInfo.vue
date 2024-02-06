@@ -10,7 +10,7 @@ import IconRSS from '../icons/IconRSS.vue';
   <h1>Xuekai Shi</h1>
   <p class="cite">Do not go gentle into that good night.</p>
   <p class="intro">
-    Do not go gentle into that good night. Do not go gentle into that good night. Do not go gentle into that good night.
+    Do not go gentle into that good night. Do not go gentle into that good night. Do not go gentle into that good night
   </p>
   <nav>
     <i>
@@ -53,6 +53,7 @@ p {
   overflow: hidden;
   /* white-space: nowrap; */
   text-overflow: ellipsis;
+  text-align-last: right;
 }
 
 nav {
