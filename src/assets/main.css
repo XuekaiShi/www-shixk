@@ -1,0 +1,56 @@
+@import './base.css';
+
+#app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0 2rem;
+  font-weight: normal;
+  min-height: 100vh;
+  /* background-color: rgb(158, 255, 223); */
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 186, 50);
+  /* transition: 0.4s; */
+  /* padding: 3px; */
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-background-mute);
+  border-radius: 0.5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-info-4);
+  border-radius: 0.5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-info-3);
+}
+
+
+/* @media (min-width: 720px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */

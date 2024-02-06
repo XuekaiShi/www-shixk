@@ -1,0 +1,110 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --xk-c-white: #ffffff;
+  --xk-c-white-soft: #f8f8f8;
+  --xk-c-white-mute: #f2f2f2;
+
+  --xk-c-black: #181818;
+  --xk-c-black-soft: #222222;
+  --xk-c-black-mute: #282828;
+
+  /* --xk-c-indigo: #2c3e50; */
+
+  --xk-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --xk-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --xk-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --xk-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --xk-c-text-light-1: var(--xk-c-black);
+  --xk-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --xk-c-text-dark-1: var(--xk-c-white);
+  --xk-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --xk-c-info-light-1: #909399;
+  --xk-c-info-light-2: #73767a;
+  --xk-c-info-light-3: #c8c9cc;
+  --xk-c-info-light-4: #e9e9eb;
+  --xk-c-info-dark-1: #c8c9cc;
+  --xk-c-info-dark-2: #e9e9eb;
+  --xk-c-info-dark-3: #909399;
+  --xk-c-info-dark-4: #73767a;
+
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--xk-c-white);
+  --color-background-soft: var(--xk-c-white-soft);
+  --color-background-mute: var(--xk-c-white-mute);
+
+  --color-border: var(--xk-c-divider-light-2);
+  --color-border-hover: var(--xk-c-divider-light-1);
+
+  --color-heading: var(--xk-c-text-light-1);
+  --color-text: var(--xk-c-text-light-1);
+
+  --color-info-1: var(--xk-c-info-light-1);
+  --color-info-2: var(--xk-c-info-light-2);
+  --color-info-3: var(--xk-c-info-light-3);
+  --color-info-4: var(--xk-c-info-light-4);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--xk-c-black);
+    --color-background-soft: var(--xk-c-black-soft);
+    --color-background-mute: var(--xk-c-black-mute);
+
+    --color-border: var(--xk-c-divider-dark-2);
+    --color-border-hover: var(--xk-c-divider-dark-1);
+
+    --color-heading: var(--xk-c-text-dark-1);
+    --color-text: var(--xk-c-text-dark-2);
+
+    --color-info-1: var(--xk-c-info-dark-1);
+    --color-info-2: var(--xk-c-info-dark-2);
+    --color-info-3: var(--xk-c-info-dark-3);
+    --color-info-4: var(--xk-c-info-dark-4);
+
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  /* line-height: 1.6; */
+  font-family:
+    'Times New Roman',
+    '宋体',
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
