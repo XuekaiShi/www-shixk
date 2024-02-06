@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import HomeInfo from './HomeInfo.vue'
+import ProfilePhoto from '../ProfilePhoto.vue';
 </script>
 <template>
   <header>
     <div class="left">
-      <img src="@/assets/test.png" alt="Profil Photo"/>
+      <ProfilePhoto></ProfilePhoto>
     </div>
     <div class="right">
       <HomeInfo />
