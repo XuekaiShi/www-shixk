@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { useRoute,useRouter } from 'vue-router';
 import ProfilePhoto from '../ProfilePhoto.vue';
 import ListItem from './ListItem.vue';
 import IconArchiveLine from '../icons/IconArchiveLine.vue';
@@ -9,6 +9,10 @@ import IconTerminalLine from '../icons/IconTerminalLine.vue';
 import IconMoreLine from '../icons/IconMoreLine.vue';
 
 const route = useRoute();
+const router = useRouter();
+const goTo = (path: string) => {
+  router.push(path);
+}
 
 </script>
 <template>
@@ -19,7 +23,7 @@ const route = useRoute();
     <div class="right">
       <h1>{{ route.name }}</h1>
       <div class="nav">
-        <ListItem>
+        <ListItem @click="goTo('/')">
           <template #icon>
             <IconTerminalLine />
           </template>
@@ -27,7 +31,7 @@ const route = useRoute();
             cd ..
           </template>
         </ListItem>
-        <ListItem v-if="route.name !== 'all'">
+        <ListItem v-if="route.name !== 'all'" @click="goTo('/all')">
           <template #icon>
             <IconArchiveLine />
           </template>
@@ -35,7 +39,7 @@ const route = useRoute();
             All
           </template>
         </ListItem>
-        <ListItem v-if="route.name !== 'blog'">
+        <ListItem v-if="route.name !== 'blog'" @click="goTo('/blog')">
           <template #icon>
             <IconGameLine />
           </template>
@@ -43,7 +47,7 @@ const route = useRoute();
             Blog
           </template>
         </ListItem>
-        <ListItem v-if="route.name !== 'notes'">
+        <ListItem v-if="route.name !== 'notes'" @click="goTo('/notes')">
           <template #icon>
             <IconFileLine />
           </template>
@@ -51,7 +55,7 @@ const route = useRoute();
             Notes
           </template>
         </ListItem>
-        <ListItem v-if="route.name !== 'more'">
+        <ListItem v-if="route.name !== 'more'" @click="goTo('/more')">
           <template #icon>
             <IconMoreLine />
           </template>
