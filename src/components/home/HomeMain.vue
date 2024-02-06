@@ -4,11 +4,16 @@ import IconArchive from '../icons/IconArchive.vue';
 import IconGame from '../icons/IconGame.vue'
 import IconFile from '../icons/IconFile.vue'
 import IconMore from '../icons/IconMore.vue'
+import router from '@/router';
+
+const goToViews = (path: string) => {
+  router.push('/' + path)
+}
 </script>
 
 <template>
   <main>
-    <HomeItem>
+    <HomeItem @click="goToViews('all')">
       <template #icon>
         <IconArchive></IconArchive>
       </template>
@@ -19,18 +24,18 @@ import IconMore from '../icons/IconMore.vue'
         Here is all my blogs and notes sorded by date.
       </template>
     </HomeItem>
-    <HomeItem>
+    <HomeItem @click="goToViews('blog')">
       <template #icon>
         <IconGame></IconGame>
       </template>
       <template #heading>
-        Blogs
+        Blog
       </template>
       <template #details>
         Here is all my blogs and notes sorded by date.
       </template>
     </HomeItem>
-    <HomeItem>
+    <HomeItem @click="goToViews('notes')">
       <template #icon>
         <IconFile></IconFile>
       </template>
@@ -41,7 +46,7 @@ import IconMore from '../icons/IconMore.vue'
         Here is all my blogs and notes sorded by date.
       </template>
     </HomeItem>
-    <HomeItem>
+    <HomeItem @click="goToViews('more')">
       <template #icon>
         <IconMore></IconMore>
       </template>
