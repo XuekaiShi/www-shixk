@@ -18,7 +18,7 @@ const goTo = (path: string) => {
 <template>
   <header>
     <div class="left">
-      <ProfilePhoto></ProfilePhoto>
+      <ProfilePhoto @click="goTo('/')"></ProfilePhoto>
     </div>
     <div class="right">
       <template v-if="route.name === 'all'">
@@ -99,6 +99,10 @@ img {
   border-radius: 50%;
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 .right {
   height: var(--img-size);
   margin-left: var(--header-margin);
@@ -132,4 +136,5 @@ img {
   header {
     padding: var(--header-margin);
   }
-}</style>
+}
+</style>
