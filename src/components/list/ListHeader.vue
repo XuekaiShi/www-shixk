@@ -21,7 +21,10 @@ const goTo = (path: string) => {
       <ProfilePhoto></ProfilePhoto>
     </div>
     <div class="right">
-      <h1>{{ route.name }}</h1>
+      <h1 v-if="route.name === 'all'">All</h1>
+      <h1 v-if="route.name === 'blog'">Blog</h1>
+      <h1 v-if="route.name === 'notes'">Notes</h1>
+      <h1 v-if="route.name === 'more'">More</h1>
       <div class="nav">
         <ListItem @click="goTo('/')">
           <template #icon>
