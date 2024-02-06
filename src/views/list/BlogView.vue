@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import ListHeader from '@/components/list/ListHeader.vue';
+</script>
 <template>
-  Blog
+  <ListHeader></ListHeader>
 </template>
