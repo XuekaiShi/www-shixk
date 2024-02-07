@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import HomeMain from '../components/home/HomeMain.vue'
 import HomeHeader from '@/components/home/HomeHeader.vue'
+import Affix from '@/components/Affix.vue';
 </script>
 
 <template>
   <div class="home">
     <HomeHeader />
     <HomeMain />
+    <Affix />
   </div>
 </template>
 
@@ -16,6 +18,7 @@ import HomeHeader from '@/components/home/HomeHeader.vue'
   --homeview-gap: 2rem;
   width: var(--homeview-width);
   margin: 12vh auto;
+  position: relative;
 }
 
 @media (max-width: 720px) {
