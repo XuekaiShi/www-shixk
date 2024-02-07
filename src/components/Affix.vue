@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toggleDark} from '@/composables/useTheme'
+import {isDark, toggleDark} from '@/composables/useTheme'
 import IconMoon from './icons/IconMoon.vue';
 import IconSun from './icons/IconSun.vue';
 import IconTranslate from './icons/IconTranslate.vue';
@@ -13,7 +13,8 @@ import IconTranslate from './icons/IconTranslate.vue';
     </button>
     <button class="theme" @click="toggleDark()">
       <i>
-        <IconMoon />
+        <IconMoon v-if="!isDark"></IconMoon>
+        <IconSun v-if="isDark"></IconSun>
       </i>
     </button>
   </div>
