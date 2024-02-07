@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {isDark, toggleDark} from '@/composables/useTheme'
+import { isDark, toggleDark } from '@/composables/useTheme'
+import { toggleLang } from '@/composables/useLocale'
 import IconMoon from './icons/IconMoon.vue';
 import IconSun from './icons/IconSun.vue';
 import IconTranslate from './icons/IconTranslate.vue';
@@ -8,7 +9,7 @@ import IconTranslate from './icons/IconTranslate.vue';
   <div class="affix">
     <button class="lang">
       <i>
-        <IconTranslate />
+        <IconTranslate @click="toggleLang()"></IconTranslate>
       </i>
     </button>
     <button class="theme" @click="toggleDark()">
@@ -41,6 +42,11 @@ button {
   border: .5px solid var(--color-text);
 }
 
+button:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
 .lang {
   color: var(--color-text);
   background-color: var(--color-background);
@@ -50,7 +56,8 @@ button {
   color: var(--color-background);
   background-color: var(--color-text);
 }
-i{
+
+i {
   display: flex;
   place-content: center;
   place-items: center;
@@ -58,6 +65,7 @@ i{
   height: calc(var(--affix-height) * 0.618);
   /* background-color: aqua; */
 }
+
 @media (max-width: 720px) {
   .affix {
     position: fixed;

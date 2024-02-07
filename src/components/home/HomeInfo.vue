@@ -7,7 +7,7 @@ import IconRSS from '../icons/IconRSS.vue';
 </script>
 
 <template>
-  <h1>Xuekai Shi</h1>
+  <h1>{{ $t('home.name') }}</h1>
   <p class="cite">Do not go gentle into that good night.</p>
   <p class="intro">
     Do not go gentle into that good night. Do not go gentle into that good night. Do not go gentle into that good night
