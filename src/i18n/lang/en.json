@@ -19,5 +19,8 @@
       "heading": "More",
       "details": "Lorem ipsum dolor sitamet"
     }
+  },
+  "notfound": {
+    "heading": "Not Found"
   }
 }
