@@ -68,27 +68,31 @@ html.dark {
   --color-info-4: var(--xk-c-info-dark-4);
 
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--xk-c-black);
-    --color-background-soft: var(--xk-c-black-soft);
-    --color-background-mute: var(--xk-c-black-mute);
-
-    --color-border: var(--xk-c-divider-dark-2);
-    --color-border-hover: var(--xk-c-divider-dark-1);
-
-    --color-heading: var(--xk-c-text-dark-1);
-    --color-text: var(--xk-c-text-dark-2);
-
-    --color-info-1: var(--xk-c-info-dark-1);
-    --color-info-2: var(--xk-c-info-dark-2);
-    --color-info-3: var(--xk-c-info-dark-3);
-    --color-info-4: var(--xk-c-info-dark-4);
-
-  }
-} */
-
+html:lang(en){
+  /* font-size: 16px; */
+  font-family:
+    'Times New Roman',
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+html:lang(zh){
+  /* font-size: 15px; */
+  font-family:
+    '宋体',
+    Inter,
+    -apple-system,
+    'Microsoft YaHei';
+}
 *,
 *::before,
 *::after {
@@ -105,7 +109,7 @@ body {
     color 0.8s ease,
     background-color 0.8s ease-in;
   /* line-height: 1.6; */
-  font-family:
+  /* font-family:
     'Times New Roman',
     '宋体',
     Inter,
@@ -119,7 +123,7 @@ body {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   font-size: 16px;
   text-rendering: optimizeLegibility;
   text-align: justify;
