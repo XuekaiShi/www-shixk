@@ -1,5 +1,23 @@
 {
   "home": {
-    "name": "Xuekai Shi"
+    "name": "Xuekai Shi",
+    "cite": "Do not go gentle int that good night.",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "all": {
+      "heading": "All Blog and Notes",
+      "details": "All my blog and notes sorted by date"
+    },
+    "blog": {
+      "heading": "Blog",
+      "details": "Lorem ipsum dolor sitamet"
+    },
+    "notes": {
+      "heading": "Notes",
+      "details": "Lorem ipsum dolor sitamet"
+    },
+    "more": {
+      "heading": "More",
+      "details": "Lorem ipsum dolor sitamet"
+    }
   }
 }

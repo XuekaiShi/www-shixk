@@ -18,10 +18,10 @@ const goToViews = (path: string) => {
         <IconArchive></IconArchive>
       </template>
       <template #heading>
-        All Blogs and Notes
+        {{ $t('home.all.heading') }}
       </template>
       <template #details>
-        Here is all my blogs and notes sorded by date.
+        {{ $t('home.all.details') }}
       </template>
     </HomeItem>
     <HomeItem @click="goToViews('blog')">
@@ -29,10 +29,10 @@ const goToViews = (path: string) => {
         <IconGame></IconGame>
       </template>
       <template #heading>
-        Blog
+        {{ $t('home.blog.heading') }}
       </template>
       <template #details>
-        Here is all my blogs and notes sorded by date.
+        {{ $t('home.blog.details') }}
       </template>
     </HomeItem>
     <HomeItem @click="goToViews('notes')">
@@ -40,10 +40,10 @@ const goToViews = (path: string) => {
         <IconFile></IconFile>
       </template>
       <template #heading>
-        Notes
+        {{ $t('home.notes.heading') }}
       </template>
       <template #details>
-        Here is all my blogs and notes sorded by date.
+        {{ $t('home.notes.details') }}
       </template>
     </HomeItem>
     <HomeItem @click="goToViews('more')">
@@ -51,10 +51,10 @@ const goToViews = (path: string) => {
         <IconMore></IconMore>
       </template>
       <template #heading>
-        More
+        {{ $t('home.more.heading') }}
       </template>
       <template #details>
-        Here is all my blogs and notes sorded by date.
+        {{ $t('home.more.details') }}
       </template>
     </HomeItem>
   </main>

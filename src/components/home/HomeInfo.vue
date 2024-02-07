@@ -8,9 +8,9 @@ import IconRSS from '../icons/IconRSS.vue';
 
 <template>
   <h1>{{ $t('home.name') }}</h1>
-  <p class="cite">Do not go gentle into that good night.</p>
+  <p class="cite">{{ $t('home.cite') }}</p>
   <p class="intro">
-    Do not go gentle into that good night. Do not go gentle into that good night. Do not go gentle into that good night
+    {{ $t('home.intro') }}
   </p>
   <nav>
     <i>
