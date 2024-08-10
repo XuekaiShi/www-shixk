@@ -12,8 +12,17 @@ const router = createRouter({
     },
     {
       path: '/:posts',
-      name: 'postsView',
-      component: () => import('../views/list/PostsView.vue')
+      // name: 'postsView',
+      children: [
+        {
+          path: '',
+          component: () => import('../views/list/PostsView.vue')
+        },
+        {
+          path: ':id',
+          component: () => import('../views/articles/template/ArticleView.vue')
+        }
+      ]
     },
     { path: '/:pathMatch(.*)', component: NotFound }
   ]

@@ -2,7 +2,7 @@ type List = {
   id: number;
   title: string;
   date: string;
-  category: "blog" | "note" | "project";
+  category: "blogs" | "notes" | "projects";
   author?: string;
   abstract?: string;
   tags?: string[];
@@ -14,7 +14,7 @@ export const list: List = [
     title: "Blog 1",
     abstract: "abstract 1",
     date: "2022-01-01",
-    category: "blog",
+    category: "blogs",
     // tags: ["tag1", "tag2"],
   },
   {
@@ -22,7 +22,7 @@ export const list: List = [
     title: "Note 1",
     abstract: "abstract 2",
     date: "2022-01-02",
-    category: "note",
+    category: "notes",
     // tags: ["tag3", "tag4"],
   },
   {
@@ -30,7 +30,7 @@ export const list: List = [
     title: "Project 1",
     abstract: "abstract 3",
     date: "2022-01-03",
-    category: "project",
+    category: "projects",
     // tags: ["tag5", "tag6"],
   },
 ];
