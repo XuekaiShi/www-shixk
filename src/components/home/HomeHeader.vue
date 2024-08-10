@@ -16,7 +16,7 @@ import ProfilePhoto from '../ProfilePhoto.vue';
 <style scoped>
 header {
   /* background-color: rgb(240, 155, 255); */
-  --img-size: 10rem;
+  --img-size: 8rem;
   --header-margin: var(--homeview-gap);
   user-select: none;
   margin-bottom: 1rem;
@@ -43,10 +43,11 @@ img {
 }
 @media (min-width: 720px) {
   header {
-    --img-size: 14rem;
+    --img-size: 12rem;
     display: flex;
     place-items: center;
     padding: var(--header-margin);
+    padding-bottom: calc( var(--header-margin) / 2 );
   }
 
   /* img {

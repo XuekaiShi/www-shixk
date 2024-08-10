@@ -16,6 +16,7 @@
 
 <style scoped>
 .item {
+  padding: .3rem;
   user-select: none;
   /* background-color: aqua; */
   display: flex;
@@ -40,6 +41,7 @@ i {
   height: 2rem;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+  /* background-color: aqua; */
 }
 
 .details {

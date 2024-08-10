@@ -17,7 +17,7 @@ import Affix from '@/components/Affix.vue';
   --homeview-width: 100%;
   --homeview-gap: 2rem;
   width: var(--homeview-width);
-  margin: 12vh auto;
+  margin: 16vh auto;
   position: relative;
 }
 
