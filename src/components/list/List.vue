@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {list} from '@/views/articles/list'
-console.log(list)
+// console.log(list)
 </script>
 
 <template>

@@ -19,4 +19,11 @@ const router = createRouter({
   ]
 })
 
+export const posts = {
+  all: "all",
+  blogs: "blogs",
+  notes: "notes",
+  more: "more"
+};
+
 export default router
