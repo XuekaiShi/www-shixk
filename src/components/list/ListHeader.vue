@@ -21,19 +21,19 @@ const goTo = (path: string) => {
       <ProfilePhoto @click="goTo('/')"></ProfilePhoto>
     </div>
     <div class="right">
-      <template v-if="route.name === 'all'">
+      <template v-if="route.path === '/all'">
         <h1>All</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
-      <template v-if="route.name === 'blog'">
+      <template v-if="route.path === '/blog'">
         <h1>Blog</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
-      <template v-if="route.name === 'notes'">
+      <template v-if="route.path === '/notes'">
         <h1>Notes</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
-      <template v-if="route.name === 'more'">
+      <template v-if="route.path === '/more'">
         <h1>More</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
@@ -46,7 +46,7 @@ const goTo = (path: string) => {
             cd ..
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.name !== 'all'" @click="goTo('/all')">
+        <ListHeaderItem v-if="route.path !== '/all'" @click="goTo('/all')">
           <template #icon>
             <IconArchiveLine />
           </template>
@@ -54,7 +54,7 @@ const goTo = (path: string) => {
             All
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.name !== 'blog'" @click="goTo('/blog')">
+        <ListHeaderItem v-if="route.path !== '/blog'" @click="goTo('/blog')">
           <template #icon>
             <IconGameLine />
           </template>
@@ -62,7 +62,7 @@ const goTo = (path: string) => {
             Blog
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.name !== 'notes'" @click="goTo('/notes')">
+        <ListHeaderItem v-if="route.path !== '/notes'" @click="goTo('/notes')">
           <template #icon>
             <IconFileLine />
           </template>
@@ -70,7 +70,7 @@ const goTo = (path: string) => {
             Notes
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.name !== 'more'" @click="goTo('/more')">
+        <ListHeaderItem v-if="route.path !== '/more'" @click="goTo('/more')">
           <template #icon>
             <IconMoreLine />
           </template>

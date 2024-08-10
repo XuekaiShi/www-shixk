@@ -11,24 +11,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/all',
-      name: 'all',
-      component: () => import('../views/list/AllPostsView.vue')
-    },
-    {
-      path: '/blog',
-      name: 'blog',
-      component: () => import('../views/list/BlogView.vue')
-    },
-    {
-      path: '/notes',
-      name: 'notes',
-      component: () => import('../views/list/NotesView.vue')
-    },
-    {
-      path: '/more',
-      name: 'more',
-      component: () => import('../views/list/MoreView.vue')
+      path: '/:posts',
+      name: 'postsView',
+      component: () => import('../views/list/PostsView.vue')
     },
     { path: '/:pathMatch(.*)', component: NotFound }
   ]
