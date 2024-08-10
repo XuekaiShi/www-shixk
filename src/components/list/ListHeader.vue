@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
 import ProfilePhoto from '../ProfilePhoto.vue';
-import ListItem from './ListItem.vue';
+import ListHeaderItem from './ListHeaderItem.vue';
 import IconArchiveLine from '../icons/IconArchiveLine.vue';
 import IconGameLine from '../icons/IconGameLine.vue';
 import IconFileLine from '../icons/IconFileLine.vue';
@@ -38,46 +38,46 @@ const goTo = (path: string) => {
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
       <div class="nav">
-        <ListItem @click="goTo('/')">
+        <ListHeaderItem @click="goTo('/')">
           <template #icon>
             <IconTerminalLine />
           </template>
           <template #heading>
             cd ..
           </template>
-        </ListItem>
-        <ListItem v-if="route.name !== 'all'" @click="goTo('/all')">
+        </ListHeaderItem>
+        <ListHeaderItem v-if="route.name !== 'all'" @click="goTo('/all')">
           <template #icon>
             <IconArchiveLine />
           </template>
           <template #heading>
             All
           </template>
-        </ListItem>
-        <ListItem v-if="route.name !== 'blog'" @click="goTo('/blog')">
+        </ListHeaderItem>
+        <ListHeaderItem v-if="route.name !== 'blog'" @click="goTo('/blog')">
           <template #icon>
             <IconGameLine />
           </template>
           <template #heading>
             Blog
           </template>
-        </ListItem>
-        <ListItem v-if="route.name !== 'notes'" @click="goTo('/notes')">
+        </ListHeaderItem>
+        <ListHeaderItem v-if="route.name !== 'notes'" @click="goTo('/notes')">
           <template #icon>
             <IconFileLine />
           </template>
           <template #heading>
             Notes
           </template>
-        </ListItem>
-        <ListItem v-if="route.name !== 'more'" @click="goTo('/more')">
+        </ListHeaderItem>
+        <ListHeaderItem v-if="route.name !== 'more'" @click="goTo('/more')">
           <template #icon>
             <IconMoreLine />
           </template>
           <template #heading>
             More
           </template>
-        </ListItem>
+        </ListHeaderItem>
       </div>
     </div>
   </header>
