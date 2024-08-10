@@ -8,7 +8,7 @@ import IconMore from '../icons/IconMore.vue'
 import router from '@/router';
 
 const goToViews = (path: string) => {
-  router.push('/' + path)
+  router.push(path)
 }
 </script>
 
