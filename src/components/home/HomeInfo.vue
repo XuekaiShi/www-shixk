@@ -4,16 +4,29 @@ import IconBili from '../icons/IconBili.vue';
 import IconDiscord from '../icons/IconDiscord.vue';
 import IconEmai from '../icons/IconEmai.vue';
 import IconRSS from '../icons/IconRSS.vue';
+import { ref } from 'vue';
+import { useClipboard } from '@vueuse/core'
+import Message from '@/components/Message.vue'
+
+const linkRef = ref('shixuekai2002@gmail.com')
+const { copy, copied } = useClipboard({ source: linkRef });
+const copyLink = (link: string) => {
+  linkRef.value = link;
+  copy();
+}
 </script>
 
 <template>
+  <Transition name="slide-fade">
+    <Message v-if="copied">Copied</Message>
+  </Transition>
   <h1>{{ $t('home.name') }}</h1>
   <p class="cite">{{ $t('home.cite') }}</p>
   <p class="intro">
     {{ $t('home.intro') }}
   </p>
   <nav>
-    <i>
+    <i @click="copyLink('shixuekai2002@gmail.com')">
       <div class="icon">
         <IconEmai></IconEmai>
       </div>
@@ -21,7 +34,7 @@ import IconRSS from '../icons/IconRSS.vue';
         <div>shixuekai2002@gmail.com</div>
       </div>
     </i>
-    <i>
+    <i @click="copyLink('github.com/XuekaiShi')">
       <div class="icon">
         <IconGithub></IconGithub>
       </div>
@@ -29,7 +42,7 @@ import IconRSS from '../icons/IconRSS.vue';
         <div>github.com/XuekaiShi</div>
       </div>
     </i>
-    <i>
+    <i @click="copyLink('bilibili.com')">
       <div class="icon">
         <IconBili></IconBili>
       </div>
@@ -57,6 +70,20 @@ import IconRSS from '../icons/IconRSS.vue';
 </template>
 
 <style scoped>
+.slide-fade-enter-active {
+  transition: all 0.1s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px) translateX(-50%);
+  opacity: 0;
+}
+
 h1 {
   user-select: text;
   font-size: 3.6rem;
