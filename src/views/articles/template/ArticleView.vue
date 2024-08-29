@@ -9,22 +9,13 @@ const routeID = route.path.replace(/^(.*?)(?=\d+$)/, '')
 
 const Article = shallowRef({})
 Article.value = A1
+
 onMounted(async () => {
   const module = await import(`./a${routeID}.vue`);
   // console.log(module)
   Article.value = module.default
 })
-// onMounted(async () => {
-//   const modules = import.meta.glob('../*.vue');
-//   for (const path in modules) {
-//     const mod = await modules[path]()
-//     const id = path.replace(/\D/gm, '')
-//     console.log(id)
-//     if (id === routeID) {
-//       Article.value = (mod as any).default
-//     }
-//   }
-// })
+
 </script>
 <template>
   <div>
