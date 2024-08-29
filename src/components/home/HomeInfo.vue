@@ -39,7 +39,9 @@ const copyLink = (link: string) => {
         <IconGithub></IconGithub>
       </div>
       <div class="detail">
-        <div>github.com/XuekaiShi</div>
+        <div>
+          <a href="https://github.com/xuekaishi" target="_blank">github.com/XuekaiShi</a>
+        </div>
       </div>
     </i>
     <i @click="copyLink('bilibili.com')">
