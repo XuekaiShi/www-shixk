@@ -14,22 +14,45 @@ import IconRSS from '../icons/IconRSS.vue';
   </p>
   <nav>
     <i>
-      <IconEmai></IconEmai>
-    </i>
-    <i title="github.com/XuekaiShi">
-      <IconGithub></IconGithub>
-    </i>
-    <i>
-    <IconBili></IconBili>
-    </i>
-    <i>
-    <IconDiscord></IconDiscord>
+      <div class="icon">
+        <IconEmai></IconEmai>
+      </div>
+      <div class="detail">
+        <div>shixuekai2002@gmail.com</div>
+      </div>
     </i>
     <i>
-    <IconRSS></IconRSS>
+      <div class="icon">
+        <IconGithub></IconGithub>
+      </div>
+      <div class="detail">
+        <div>github.com/XuekaiShi</div>
+      </div>
     </i>
-    <!-- <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink> -->
+    <i>
+      <div class="icon">
+        <IconBili></IconBili>
+      </div>
+      <div class="detail">
+        <div>bilibili.com</div>
+      </div>
+    </i>
+    <i>
+      <div class="icon">
+        <IconDiscord></IconDiscord>
+      </div>
+      <div class="detail">
+        <div>discord.com</div>
+      </div>
+    </i>
+    <i>
+      <div class="icon">
+        <IconRSS></IconRSS>
+      </div>
+      <div class="detail">
+        <div>rss</div>
+      </div>
+    </i>
   </nav>
 </template>
 
@@ -67,10 +90,33 @@ i {
   display: flex;
   place-items: center;
   place-content: center;
-  width: var(--font-size-info);
-  height: var(--font-size-info);
+  /* width: var(--font-size-info);
+  height: var(--font-size-info); */
   margin-right: calc(var(--header-margin) / 4);
   margin-left: calc(var(--header-margin) / 4);
+  transition: background-color .2s ease-in-out;
+}
+
+i .icon {
+  width: var(--font-size-info);
+  height: var(--font-size-info);
+}
+
+i .detail {
+  /* display: none; */
+  user-select: text;
+  font-size: 0.8rem;
+  /* background-color: yellow; */
+  display: grid;
+  grid-template-columns: 0fr;
+  transition:
+    grid-template-columns 800ms ease;
+  /* transition: display 3s ease-in-out; */
+}
+
+i .detail>div {
+  grid-column: 1 / span 2;
+  overflow: hidden;
 }
 
 i:last-of-type {
@@ -79,6 +125,17 @@ i:last-of-type {
 
 i:hover {
   cursor: pointer;
+  background-color: var(--color-background-soft);
+}
+
+i:active {
+  background-color: var(--color-background-mute);
+  /* background-color: aqua; */
+}
+
+i:hover .detail {
+  grid-template-columns: 1fr;
+  padding: 0 0.2rem 0 0.2rem;
 }
 
 @media (max-width: 720px) {
@@ -92,7 +149,7 @@ i:hover {
     margin: calc(var(--header-margin) / 4) auto;
   }
 
-  .intro{
+  .intro {
     display: none;
   }
 
@@ -123,4 +180,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-} */</style>
+} */
+</style>
