@@ -23,8 +23,10 @@ import IconInfo from '@/components/icons/IconInfo.vue'
   padding: 0.8rem;
   border-radius: 0.5rem;
   font-style: italic;
+  color: var(--color-info-2);
 }
 .icon {
+  color: var(--color-info-2);
   margin-right: 0.5rem;
   width: 1rem;
   height: 1rem;

@@ -130,15 +130,12 @@ i .icon {
 }
 
 i .detail {
-  /* display: none; */
   user-select: text;
   font-size: 0.8rem;
-  /* background-color: yellow; */
   display: grid;
   grid-template-columns: 0fr;
   transition:
-    grid-template-columns 800ms ease;
-  /* transition: display 3s ease-in-out; */
+    grid-template-columns 500ms ease-in-out;
 }
 
 i .detail>div {
