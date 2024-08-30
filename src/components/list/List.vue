@@ -2,6 +2,7 @@
 import { list } from '@/views/articles/list'
 import { posts } from '@/router';
 import { useRoute, useRouter } from 'vue-router';
+import ListItem from './ListItem.vue'
 
 const route = useRoute();
 const router = useRouter();
@@ -25,8 +26,19 @@ const filterList = list.filter((item) => {
 
 <template>
   <div>
-    <div v-for="item in filterList" :key="item.id">
-      <p @click="goTo(item.id, item.category)">{{ item.title }}</p>
-    </div>
+    <ListItem v-for="item in filterList" :key="item.id" @click="goTo(item.id, item.category)">
+      <template #title>
+        {{ item.title }}
+      </template>
+      <template #category>
+        {{ item.category }}
+      </template>
+      <template #date>
+        {{ item.date }}
+      </template>
+      <template #abstract>
+        {{ item.abstract }}
+      </template>
+    </ListItem>
   </div>
 </template>

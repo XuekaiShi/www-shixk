@@ -90,7 +90,7 @@ header {
   --img-size: 6rem;
   --header-margin: 0.6rem;
   padding: var(--header-margin);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   border-bottom: 1.5px solid var(--color-text);
 }
 
@@ -111,7 +111,9 @@ img:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-
+h1 {
+  font-size: 2.6rem;
+}
 .info {
   color: var(--color-info-1);
 }

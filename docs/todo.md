@@ -14,6 +14,7 @@
 ## Global
 <!-- - [Feat] 中文时，里面的英文也要是 Times New Roman -->
 - [Bug] 动态路由导致任意二级路由进入post（list）页面（路由守卫？）
+- [Feat] 把所有的字号统一一下
 
 ## Others
 - [Feat]浏览器标签页要随着路由变化

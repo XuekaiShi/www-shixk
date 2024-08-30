@@ -22,10 +22,10 @@
   display: flex;
   align-items: center;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
 .item:hover {
-  cursor: pointer;
   background-color: var(--color-background-soft);
 }
 
