@@ -26,15 +26,15 @@ const copyLink = (link: string) => {
     {{ $t('home.intro') }}
   </p>
   <nav>
-    <i @click="copyLink('shixuekai2002@gmail.com')">
+    <li @click="copyLink('shixuekai2002@gmail.com')">
       <div class="icon">
         <IconEmai></IconEmai>
       </div>
       <div class="detail">
         <div>shixuekai2002@gmail.com</div>
       </div>
-    </i>
-    <i @click="copyLink('github.com/XuekaiShi')">
+    </li>
+    <li @click="copyLink('github.com/XuekaiShi')">
       <div class="icon">
         <IconGithub></IconGithub>
       </div>
@@ -43,31 +43,31 @@ const copyLink = (link: string) => {
           <a href="https://github.com/xuekaishi" target="_blank">github.com/XuekaiShi</a>
         </div>
       </div>
-    </i>
-    <i @click="copyLink('bilibili.com')">
+    </li>
+    <li @click="copyLink('bilibili.com')">
       <div class="icon">
         <IconBili></IconBili>
       </div>
       <div class="detail">
         <div>bilibili.com</div>
       </div>
-    </i>
-    <i>
+    </li>
+    <li>
       <div class="icon">
         <IconDiscord></IconDiscord>
       </div>
       <div class="detail">
         <div>discord.com</div>
       </div>
-    </i>
-    <i>
+    </li>
+    <li>
       <div class="icon">
         <IconRSS></IconRSS>
       </div>
       <div class="detail">
         <div>rss</div>
       </div>
-    </i>
+    </li>
   </nav>
 </template>
 
@@ -115,7 +115,7 @@ nav {
   margin-top: calc(var(--header-margin) / 6);
 }
 
-i {
+li {
   display: flex;
   place-items: center;
   place-content: center;
@@ -126,12 +126,12 @@ i {
   transition: background-color .2s ease-in-out;
 }
 
-i .icon {
+li .icon {
   width: var(--font-size-info);
   height: var(--font-size-info);
 }
 
-i .detail {
+li .detail {
   user-select: text;
   font-size: 0.8rem;
   display: grid;
@@ -140,26 +140,26 @@ i .detail {
     grid-template-columns 500ms ease-in-out;
 }
 
-i .detail>div {
+li .detail>div {
   grid-column: 1 / span 2;
   overflow: hidden;
 }
 
-i:last-of-type {
+li:last-of-type {
   margin-right: 0;
 }
 
-i:hover {
+li:hover {
   cursor: pointer;
   background-color: var(--color-background-soft);
 }
 
-i:active {
+li:active {
   background-color: var(--color-background-mute);
   /* background-color: aqua; */
 }
 
-i:hover .detail {
+li:hover .detail {
   grid-template-columns: 1fr;
   padding: 0 0.2rem 0 0.2rem;
 }

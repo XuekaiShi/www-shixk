@@ -1,8 +1,8 @@
 <template>
   <div class="item">
-    <i>
+    <li>
       <slot name="icon"></slot>
-    </i>
+    </li>
     <span>
       <slot name="heading"></slot>
     </span>
@@ -21,7 +21,7 @@ span{
   margin-left: 0.2em;
 }
 
-i {
+li {
   color: var(--color-text);
   display: flex;
   place-items: center;

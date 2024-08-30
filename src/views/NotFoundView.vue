@@ -9,9 +9,9 @@ const goTo = (path: string) => {
 <template>
   <h2>{{ $t('notfound.heading') }}</h2>
   <div class="item" @click="goTo('/')">
-    <i>
+    <li>
       <IconTerminalLine />
-    </i>
+    </li>
     <span>
       cd ..
     </span>
@@ -34,7 +34,7 @@ span {
   margin-left: 0.2em;
 }
 
-i {
+li {
   color: var(--color-text);
   display: flex;
   place-items: center;

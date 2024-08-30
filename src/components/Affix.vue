@@ -8,15 +8,15 @@ import IconTranslate from './icons/IconTranslate.vue';
 <template>
   <div class="affix">
     <button class="lang">
-      <i>
+      <li>
         <IconTranslate @click="toggleLang()"></IconTranslate>
-      </i>
+      </li>
     </button>
     <button class="theme" @click="toggleDark()">
-      <i>
+      <li>
         <IconMoon v-if="!isDark"></IconMoon>
         <IconSun v-if="isDark"></IconSun>
-      </i>
+      </li>
     </button>
   </div>
 </template>
@@ -57,7 +57,7 @@ button:hover {
   background-color: var(--color-text);
 }
 
-i {
+li {
   display: flex;
   place-content: center;
   place-items: center;

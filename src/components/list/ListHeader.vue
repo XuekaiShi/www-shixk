@@ -91,7 +91,7 @@ header {
   --header-margin: 0.6rem;
   padding: var(--header-margin);
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--color-text);
+  border-bottom: 1.5px solid var(--color-text);
 }
 
 img {

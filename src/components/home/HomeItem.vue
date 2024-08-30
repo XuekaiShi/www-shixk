@@ -1,8 +1,8 @@
 <template>
   <div class="item">
-    <i>
+    <li>
       <slot name="icon"></slot>
-    </i>
+    </li>
     <div class="details">
       <h3>
         <slot name="heading"></slot>
@@ -33,7 +33,7 @@
   background-color: var(--color-background-mute);
 }
 
-i {
+li {
   display: flex;
   place-items: center;
   place-content: center;

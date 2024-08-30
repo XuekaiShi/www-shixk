@@ -40,16 +40,3 @@ a,a:link,a:visited,a:hover,a:active{
   background: var(--color-info-3);
 }
 
-
-/* @media (min-width: 720px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */
