@@ -16,6 +16,7 @@ import IconInfo from '@/components/icons/IconInfo.vue'
   /* justify-content: center; */
   align-items: center;
   position: fixed;
+  z-index: 999;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
