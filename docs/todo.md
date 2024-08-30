@@ -3,7 +3,7 @@
 <!-- - [Bug-fixed]Logo 是个数条，会被点到 -->
 - [Feat]home页的4个块是飘出来的(动画)
 - [Feat]跨路由，头像什么的要有动画
-- [Feat]@media 的时候有动画
+- [Feat]@media 的时候有动画 grid实现不了
 
 ## List Page
 - [Feat]“返回”的交互要设计以下

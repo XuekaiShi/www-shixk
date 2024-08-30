@@ -24,6 +24,7 @@ header {
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-info-1);
   padding-bottom: calc(var(--header-margin) / 2);
+  transition: all 0.5s ease-in-out;
 }
 
 .left {
