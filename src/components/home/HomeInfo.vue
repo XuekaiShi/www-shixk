@@ -169,10 +169,11 @@ i:hover .detail {
     font-size: 2.6rem;
     margin: auto;
     margin-top: calc(var(--header-margin) / 2);
+    margin-bottom: calc(var(--header-margin) / 8);
   }
 
   p {
-    margin: calc(var(--header-margin) / 4) auto;
+    margin: calc(var(--header-margin) / 8) auto;
   }
 
   .intro {
@@ -180,7 +181,7 @@ i:hover .detail {
   }
 
   nav {
-    margin: calc(var(--header-margin) / 4) auto calc(var(--header-margin) / 2) auto;
+    margin: calc(var(--header-margin) / 8) auto calc(var(--header-margin) / 8) auto;
   }
 }
 

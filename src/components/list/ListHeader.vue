@@ -89,8 +89,8 @@ header {
   place-items: center;
   --img-size: 6rem;
   --header-margin: 0.6rem;
+  padding: var(--header-margin);
   margin-bottom: 1rem;
-  padding: var(--header-margin) 0;
   border-bottom: 2px solid var(--color-text);
 }
 
@@ -133,9 +133,9 @@ img:hover {
   margin-right: 0;
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
   header {
-    padding: var(--header-margin);
+    padding: var(--header-margin) 0;
   }
 }
 </style>

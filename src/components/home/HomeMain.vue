@@ -63,26 +63,19 @@ const goToViews = (path: string) => {
 
 <style scoped>
 main {
+  padding: var(--homeview-gap);
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding-top: calc(var(--homeview-gap) / 2);
   /* background-color: yellow; */
   /* height: 20vh; */
   /* overflow: hidden; */
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
   main {
-    padding: var(--homeview-gap);
-    grid-template-columns: 1fr 1fr;
+    padding: calc(var(--homeview-gap) / 2);
+    grid-template-columns: 1fr;
   }
-
-  /* main {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-    width: 100%;
-  } */
 }
 </style>

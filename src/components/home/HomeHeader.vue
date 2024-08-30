@@ -15,12 +15,15 @@ import ProfilePhoto from '../ProfilePhoto.vue';
 
 <style scoped>
 header {
-  /* background-color: rgb(240, 155, 255); */
-  --img-size: 8rem;
+  --img-size: 11rem;
   --header-margin: var(--homeview-gap);
+  display: flex;
+  place-items: center;
+  padding: var(--header-margin);
   user-select: none;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-info-1);
+  padding-bottom: calc(var(--header-margin) / 2);
 }
 
 .left {
@@ -36,29 +39,29 @@ img {
 }
 
 .right {
-  /* background-color: antiquewhite; */
   --font-size-info: 1.17rem;
   display: flex;
   flex-direction: column;
+  height: var(--img-size);
+  justify-content: space-between;
+  align-items: end;
+  margin-left: var(--header-margin);
 }
-@media (min-width: 720px) {
-  header {
-    --img-size: 11rem;
-    display: flex;
-    place-items: center;
-    padding: var(--header-margin);
-    padding-bottom: calc( var(--header-margin) / 2 );
-  }
 
-  /* img {
-    margin: var(--header-margin);
-  } */
+@media (max-width: 720px) {
+  header {
+    /* background-color: rgb(240, 155, 255); */
+    flex-direction: column;
+    --img-size: 8rem;
+    padding-bottom: calc(var(--header-margin) / 4);
+
+  }
 
   .right {
-    height: var(--img-size);
-    justify-content: space-between;
-    align-items: end;
-    margin-left: var(--header-margin);
+    margin-left: 0;
+    height: auto;
+    /* background-color: antiquewhite; */
   }
+
 }
 </style>
