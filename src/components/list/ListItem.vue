@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: background-color 0.3s ease-in-out;
   /* background-color: antiquewhite; */
 }
 

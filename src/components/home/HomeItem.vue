@@ -21,7 +21,7 @@
   /* background-color: aqua; */
   display: flex;
   align-items: center;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
 
