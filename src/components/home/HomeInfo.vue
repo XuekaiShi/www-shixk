@@ -93,8 +93,8 @@ h1 {
 
 p {
   font-size: var(--font-size-info);
-  margin-top: calc(var(--header-margin) / 4);
-  margin-bottom: calc(var(--header-margin) / 4);
+  margin-top: calc(var(--header-margin) / 8);
+  margin-bottom: calc(var(--header-margin) / 8);
 }
 
 .cite {
@@ -112,7 +112,7 @@ p {
 nav {
   display: flex;
   font-size: var(--font-size-info);
-  margin-top: calc(var(--header-margin) / 4);
+  margin-top: calc(var(--header-margin) / 6);
 }
 
 i {

@@ -19,7 +19,7 @@ header {
   --img-size: 8rem;
   --header-margin: var(--homeview-gap);
   user-select: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-info-1);
 }
 
@@ -43,7 +43,7 @@ img {
 }
 @media (min-width: 720px) {
   header {
-    --img-size: 12rem;
+    --img-size: 11rem;
     display: flex;
     place-items: center;
     padding: var(--header-margin);
