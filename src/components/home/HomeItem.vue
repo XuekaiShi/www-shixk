@@ -48,6 +48,15 @@ i {
   padding: 0.5rem;
 }
 
+h3 {
+  height: 1.5rem;
+}
+
+p {
+  height: 1rem;
+  /* font-size: 1rem; */
+}
+
 .info {
   color: var(--color-info-1);
 }</style>
