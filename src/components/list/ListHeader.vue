@@ -106,7 +106,7 @@ img:hover {
 
 .right {
   height: var(--img-size);
-  margin-left: var(--header-margin);
+  margin-left: calc(var(--header-margin) * 2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
