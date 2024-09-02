@@ -12,7 +12,7 @@ export const list: List = [
   {
     id: 1,
     title: "Blog 1",
-    abstract: "abstract 1",
+    abstract: "The 2023 Canadian forest fires have been extreme in scale and intensity with more than seven ",
     date: "2022-01-01",
     category: "blogs",
     // tags: ["tag1", "tag2"],

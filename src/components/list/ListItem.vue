@@ -9,9 +9,9 @@
       </p>
     </div>
     <div class="right">
-      <p class="category">
+      <!-- <p class="category">
         <slot name="category"></slot>
-      </p>
+      </p> -->
       <p class="date">
         <slot name="date"></slot>
       </p>
@@ -27,7 +27,7 @@
   /* margin-bottom: 0.5rem; */
   border-bottom: 1.3px solid var(--color-background-mute);
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   transition: background-color 0.3s ease-in-out;
   /* background-color: antiquewhite; */
@@ -47,10 +47,16 @@ h2 {
   font-weight: bold;
 }
 
+.left {
+  width: 80%;
+}
+
 .right {
   display: flex;
   flex-direction: column;
-  align-items:end;
+  align-items: end;
+  padding-top: 0.3rem;
+  /* width: 60%; */
 }
 
 .abstract {
@@ -65,5 +71,15 @@ h2 {
 .category {
   font-weight: bold;
   color: var(--color-info-1);
+}
+
+@media (max-width: 768px) {
+  .right {
+    display: none;
+  }
+
+  .left {
+    width: 100%;
+  }
 }
 </style>
