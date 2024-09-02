@@ -3,11 +3,16 @@ import { useRoute, useRouter } from 'vue-router';
 import { posts } from '@/router';
 import ProfilePhoto from '../ProfilePhoto.vue';
 import ListHeaderItem from './ListHeaderItem.vue';
-import IconArchiveLine from '../icons/IconArchiveLine.vue';
-import IconGameLine from '../icons/IconGameLine.vue';
-import IconFileLine from '../icons/IconFileLine.vue';
-import IconTerminalLine from '../icons/IconTerminalLine.vue';
-import IconMoreLine from '../icons/IconMoreLine.vue';
+// import IconArchiveLine from '../icons/IconArchiveLine.vue';
+import IconArchive from '../icons/IconArchive.vue';
+// import IconGameLine from '../icons/IconGameLine.vue';
+import IconGame from '../icons/IconGame.vue';
+// import IconFileLine from '../icons/IconFileLine.vue';
+import IconFile from '../icons/IconFile.vue';
+// import IconTerminalLine from '../icons/IconTerminalLine.vue';
+import IconTerminal from '../icons/IconTerminal.vue';
+// import IconMoreLine from '../icons/IconMoreLine.vue';
+import IconMore from '../icons/IconMore.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -47,7 +52,8 @@ const goTo = (path: string) => {
       <div class="nav">
         <ListHeaderItem @click="goTo('/')">
           <template #icon>
-            <IconTerminalLine />
+            <!-- <IconTerminalLine /> -->
+             <IconTerminal />
           </template>
           <template #heading>
             cd ..
@@ -55,7 +61,8 @@ const goTo = (path: string) => {
         </ListHeaderItem>
         <ListHeaderItem v-if="route.path !== '/' + posts.all" @click="goTo(posts.all)">
           <template #icon>
-            <IconArchiveLine />
+            <!-- <IconArchiveLine /> -->
+             <IconArchive />
           </template>
           <template #heading>
             All
@@ -63,7 +70,8 @@ const goTo = (path: string) => {
         </ListHeaderItem>
         <ListHeaderItem v-if="route.path !== '/' + posts.blogs" @click="goTo(posts.blogs)">
           <template #icon>
-            <IconGameLine />
+            <!-- <IconGameLine /> -->
+             <IconGame />
           </template>
           <template #heading>
             Blog
@@ -71,7 +79,8 @@ const goTo = (path: string) => {
         </ListHeaderItem>
         <ListHeaderItem v-if="route.path !== '/' + posts.notes" @click="goTo(posts.notes)">
           <template #icon>
-            <IconFileLine />
+            <!-- <IconFileLine /> -->
+             <IconFile />
           </template>
           <template #heading>
             Notes
@@ -79,7 +88,8 @@ const goTo = (path: string) => {
         </ListHeaderItem>
         <ListHeaderItem v-if="route.path !== '/' + posts.more" @click="goTo(posts.more)">
           <template #icon>
-            <IconMoreLine />
+            <!-- <IconMoreLine /> -->
+             <IconMore />
           </template>
           <template #heading>
             More
@@ -119,6 +129,7 @@ img:hover {
 }
 h1 {
   font-size: 2.6rem;
+  margin-bottom: -0.3rem;
 }
 .info {
   color: var(--color-info-1);
@@ -126,6 +137,7 @@ h1 {
 
 .nav {
   display: flex;
+  margin-top: 0.3rem;
 }
 
 .item {

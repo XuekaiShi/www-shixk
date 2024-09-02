@@ -14,6 +14,7 @@
   user-select: none;
   display: flex;
   align-items: center;
+  font-family:'Courier New', Courier, monospace;
   /* background-color: red */
 }
 
