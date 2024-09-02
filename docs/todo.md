@@ -7,6 +7,7 @@
 
 ## List Page
 - [Feat]“返回”的交互要设计以下
+- [Refactor]感觉现在的router和嵌套逻辑都不好
 
 ## Post Page
 - 打印时隐藏 header

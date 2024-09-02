@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { list } from '@/views/articles/list'
 import { posts } from '@/router';
 import { useRoute, useRouter } from 'vue-router';
@@ -20,6 +21,10 @@ const filterList = list.filter((item) => {
   } else {
     return '/' + item.category === route.path
   }
+})
+
+onMounted(() => {
+  console.log("mounted")
 })
 
 </script>

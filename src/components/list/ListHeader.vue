@@ -11,7 +11,13 @@ import IconMoreLine from '../icons/IconMoreLine.vue';
 
 const route = useRoute();
 const router = useRouter();
+const emit = defineEmits(['changeTab']);
+
 const goTo = (path: string) => {
+  if (path !== '/') {
+    console.log('changeTab')
+    emit('changeTab');
+  }
   router.push(path);
 }
 
