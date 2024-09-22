@@ -1,9 +1,9 @@
 <template>
   <div class="item">
     <div class="left">
-      <h2>
+      <span>
         <slot name="title"></slot>
-      </h2>
+      </span>
       <p class="abstract">
         <slot name="abstract"></slot>
       </p>
@@ -29,8 +29,21 @@
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
   /* background-color: antiquewhite; */
+}
+
+.item .left span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  /* text-decoration: underline; */
+  background: linear-gradient(to right, var(--color-text), var(--color-text)) no-repeat right bottom;
+  background-size: 0 1.3px;
+  transition: background-size 0.3s ease-in-out;
+}
+.item:hover .left span {
+  background-position-x: left;
+  background-size: 100% 1.3px;
 }
 
 .item:hover {
@@ -39,12 +52,6 @@
 
 .item:active {
   background-color: var(--color-background-mute);
-}
-
-h2 {
-  text-decoration: underline;
-  font-size: 1.1rem;
-  font-weight: bold;
 }
 
 .left {

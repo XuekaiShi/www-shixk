@@ -20,6 +20,13 @@
 
 span{
   margin-left: 0.2em;
+  background: linear-gradient(to right, var(--color-text), var(--color-text)) no-repeat right bottom;
+  background-size: 0 1px;
+  transition: background-size 0.3s ease-in-out;
+}
+.item:hover span{
+  background-position-x: left;
+  background-size: 100% 1px;
 }
 
 li {

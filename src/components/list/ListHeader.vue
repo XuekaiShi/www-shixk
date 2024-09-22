@@ -5,7 +5,7 @@ import ListHeaderItem from './ListHeaderItem.vue';
 import IconArchive from '../icons/IconArchive.vue';
 import IconGame from '../icons/IconGame.vue';
 import IconFile from '../icons/IconFile.vue';
-import IconTerminal from '../icons/IconTerminal.vue';
+// import IconTerminal from '../icons/IconTerminal.vue';
 import IconMore from '../icons/IconMore.vue';
 import { useListStore } from '@/stores/listState';
 import { ListCategory } from '@/types/list.d';
