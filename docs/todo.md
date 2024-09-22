@@ -8,7 +8,8 @@
 ## List Page
 - [Feat]“返回”的交互要设计以下
 - [Refactor]感觉现在的router和嵌套逻辑都不好
-- [Fix] border bottom 太靠下了
+- [Feat] 现在的走马灯，不能自适应尺寸
+<!-- - [Fix] border bottom 太靠下了 -->
 
 ## Post Page
 - 打印时隐藏 header

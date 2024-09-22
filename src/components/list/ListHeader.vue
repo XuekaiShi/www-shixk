@@ -1,29 +1,29 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
-import { posts } from '@/router';
 import ProfilePhoto from '../ProfilePhoto.vue';
 import ListHeaderItem from './ListHeaderItem.vue';
-// import IconArchiveLine from '../icons/IconArchiveLine.vue';
 import IconArchive from '../icons/IconArchive.vue';
-// import IconGameLine from '../icons/IconGameLine.vue';
 import IconGame from '../icons/IconGame.vue';
-// import IconFileLine from '../icons/IconFileLine.vue';
 import IconFile from '../icons/IconFile.vue';
-// import IconTerminalLine from '../icons/IconTerminalLine.vue';
 import IconTerminal from '../icons/IconTerminal.vue';
-// import IconMoreLine from '../icons/IconMoreLine.vue';
 import IconMore from '../icons/IconMore.vue';
+import { useListStore } from '@/stores/listState';
+import { ListCategory } from '@/types/list.d';
 
-const route = useRoute();
+
+const listStore = useListStore();
 const router = useRouter();
 const emit = defineEmits(['changeTab']);
 
-const goTo = (path: string) => {
+const goTo = (path: ListCategory | '/') => {
   if (path !== '/') {
-    console.log('changeTab')
+    // console.log('changeTab')
     emit('changeTab');
+    listStore.ListState = path as ListCategory;
+    console.log(listStore.ListState);
+  } else {
+    router.push(path);
   }
-  router.push(path);
 }
 
 </script>
@@ -33,63 +33,58 @@ const goTo = (path: string) => {
       <ProfilePhoto @click="goTo('/')"></ProfilePhoto>
     </div>
     <div class="right">
-      <template v-if="route.path === '/' + posts.all">
+      <template v-if="listStore.ListState === ListCategory.All">
         <h1>All</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
-      <template v-if="route.path === '/' + posts.blogs">
-        <h1>Blog</h1>
-        <p class="info">Here is all my blogs and notes sorded by date.</p>
+      <template v-if="listStore.ListState === ListCategory.Blogs">
+        <h1>Blogs</h1>
+        <p class="info">Here is all my blogs sorded by date.</p>
       </template>
-      <template v-if="route.path === '/' + posts.notes">
+      <template v-if="listStore.ListState === ListCategory.Notes">
         <h1>Notes</h1>
-        <p class="info">Here is all my blogs and notes sorded by date.</p>
+        <p class="info">Here is all my notes sorded by date.</p>
       </template>
-      <template v-if="route.path === '/' + posts.more">
+      <template v-if="listStore.ListState === ListCategory.More">
         <h1>More</h1>
-        <p class="info">Here is all my blogs and notes sorded by date.</p>
+        <p class="info">Here is all </p>
       </template>
       <div class="nav">
-        <ListHeaderItem @click="goTo('/')">
+        <!-- <ListHeaderItem @click="goTo('/')">
           <template #icon>
-            <!-- <IconTerminalLine /> -->
-             <IconTerminal />
+            <IconTerminal />
           </template>
           <template #heading>
             cd ..
           </template>
-        </ListHeaderItem>
-        <ListHeaderItem v-if="route.path !== '/' + posts.all" @click="goTo(posts.all)">
+        </ListHeaderItem> -->
+        <ListHeaderItem @click="goTo(ListCategory.All)">
           <template #icon>
-            <!-- <IconArchiveLine /> -->
-             <IconArchive />
+            <IconArchive />
           </template>
           <template #heading>
             All
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.path !== '/' + posts.blogs" @click="goTo(posts.blogs)">
+        <ListHeaderItem @click="goTo(ListCategory.Blogs)">
           <template #icon>
-            <!-- <IconGameLine /> -->
-             <IconGame />
+            <IconGame />
           </template>
           <template #heading>
-            Blog
+            Blogs
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.path !== '/' + posts.notes" @click="goTo(posts.notes)">
+        <ListHeaderItem @click="goTo(ListCategory.Notes)">
           <template #icon>
-            <!-- <IconFileLine /> -->
-             <IconFile />
+            <IconFile />
           </template>
           <template #heading>
             Notes
           </template>
         </ListHeaderItem>
-        <ListHeaderItem v-if="route.path !== '/' + posts.more" @click="goTo(posts.more)">
+        <ListHeaderItem @click="goTo(ListCategory.More)">
           <template #icon>
-            <!-- <IconMoreLine /> -->
-             <IconMore />
+            <IconMore />
           </template>
           <template #heading>
             More
@@ -127,10 +122,12 @@ img:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
 h1 {
   font-size: 2.6rem;
   margin-bottom: -0.3rem;
 }
+
 .info {
   color: var(--color-info-1);
 }

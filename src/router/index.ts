@@ -11,28 +11,29 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/:posts',
-      // name: 'postsView',
-      children: [
-        {
-          path: '',
-          component: () => import('../views/list/PostsView.vue')
-        },
-        {
-          path: ':id',
-          component: () => import('../views/articles/ArticleView.vue')
-        }
-      ]
+      path: '/posts',
+      name: 'posts',
+      component: () => import('../views/list/PostsView.vue'),
+      // children: [
+      //   // {
+      //   //   path: '/',
+      //   //   component: () => import('../views/list/PostsView.vue')
+      //   // },
+      //   {
+      //     path: ':id',
+      //     component: () => import('../views/articles/ArticleView.vue')
+      //   }
+      // ]
     },
     { path: '/:pathMatch(.*)', component: NotFound }
   ]
 })
 
-export const posts = {
-  all: "all",
-  blogs: "blogs",
-  notes: "notes",
-  more: "more"
-};
+// export const posts = {
+//   all: "all",
+//   blogs: "blogs",
+//   notes: "notes",
+//   more: "more"
+// };
 
 export default router

@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import HomeItem from './HomeItem.vue'
-import { posts } from '@/router';
+// import { posts } from '@/router';
 import IconArchive from '../icons/IconArchive.vue';
 import IconGame from '../icons/IconGame.vue'
 import IconFile from '../icons/IconFile.vue'
 import IconMore from '../icons/IconMore.vue'
 import router from '@/router';
 
-const goToViews = (path: string) => {
-  router.push(path)
+const goToViews = () => {
+  router.push("posts")
 }
 </script>
 
 <template>
   <main>
-    <HomeItem @click="goToViews(posts.all)">
+    <HomeItem @click="goToViews()">
       <template #icon>
         <IconArchive></IconArchive>
       </template>
@@ -25,7 +25,7 @@ const goToViews = (path: string) => {
         {{ $t('home.all.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews(posts.blogs)">
+    <HomeItem @click="goToViews()">
       <template #icon>
         <IconGame></IconGame>
       </template>
@@ -36,7 +36,7 @@ const goToViews = (path: string) => {
         {{ $t('home.blog.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews(posts.notes)">
+    <HomeItem @click="goToViews()">
       <template #icon>
         <IconFile></IconFile>
       </template>
@@ -47,7 +47,7 @@ const goToViews = (path: string) => {
         {{ $t('home.notes.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews(posts.more)">
+    <HomeItem @click="goToViews()">
       <template #icon>
         <IconMore></IconMore>
       </template>
