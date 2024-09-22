@@ -10,6 +10,7 @@ import IconFile from '../icons/IconFile.vue';
 import IconMore from '../icons/IconMore.vue';
 import { useListStore } from '@/stores/listState';
 import { ListCategory } from '@/types/list.d';
+import { Starport } from 'vue-starport';
 
 
 const listStore = useListStore();
@@ -35,7 +36,9 @@ const isActive = (category: ListCategory) => {
 <template>
   <header>
     <div class="left">
+      <Starport port="profile-photo" class="starport">
       <ProfilePhoto @click="goTo('/')"></ProfilePhoto>
+      </Starport>
     </div>
     <div class="right">
       <template v-if="isActive(ListCategory.All)">
@@ -102,12 +105,19 @@ header {
   border-bottom: 1.5px solid var(--color-text);
 }
 
-img {
+.starport {
+  /* background-color: aqua; */
+  width: var(--img-size);
+  height: var(--img-size);
+}
+
+
+/* img {
   width: var(--img-size);
   height: var(--img-size);
   border-radius: 50%;
   cursor: pointer;
-}
+} */
 
 .right {
   height: var(--img-size);

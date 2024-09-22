@@ -68,7 +68,8 @@ html.dark {
   --color-info-4: var(--xk-c-info-dark-4);
 
 }
-html:lang(en){
+
+html:lang(en) {
   /* font-size: 16px; */
   font-family:
     'Times New Roman',
@@ -87,7 +88,8 @@ html:lang(en){
     'Helvetica Neue',
     sans-serif;
 }
-html:lang(zh){
+
+html:lang(zh) {
   /* font-size: 15px; */
   font-family:
     'Times New Roman',
@@ -97,6 +99,7 @@ html:lang(zh){
     -apple-system,
     'Microsoft YaHei';
 }
+
 *,
 *::before,
 *::after {

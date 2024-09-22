@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import HomeInfo from './HomeInfo.vue'
 import ProfilePhoto from '../ProfilePhoto.vue';
+import { Starport } from 'vue-starport';
 </script>
 <template>
   <header>
     <div class="left">
-      <ProfilePhoto></ProfilePhoto>
+      <Starport port="profile-photo" class="starport">
+        <ProfilePhoto></ProfilePhoto>
+      </Starport>
     </div>
     <div class="right">
       <HomeInfo />
@@ -32,12 +35,19 @@ header {
   display: flex;
 }
 
-img {
+.starport {
+  height: var(--img-size);
+  width: var(--img-size);
+  /* background-color: red; */
+  /* transition: all 1s ease-in-out; */
+}
+
+/* img {
   width: var(--img-size);
   height: var(--img-size);
   border-radius: 50%;
   margin: 0 auto 0 auto;
-}
+} */
 
 .right {
   --font-size-info: 1.17rem;
