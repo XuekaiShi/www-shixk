@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
+import { watchEffect } from 'vue';
 import ProfilePhoto from '../ProfilePhoto.vue';
 import ListHeaderItem from './ListHeaderItem.vue';
 import IconArchive from '../icons/IconArchive.vue';
@@ -26,6 +27,10 @@ const goTo = (path: ListCategory | '/') => {
   }
 }
 
+const isActive = (category: ListCategory) => {
+  return listStore.ListState === category;
+}
+
 </script>
 <template>
   <header>
@@ -33,32 +38,24 @@ const goTo = (path: ListCategory | '/') => {
       <ProfilePhoto @click="goTo('/')"></ProfilePhoto>
     </div>
     <div class="right">
-      <template v-if="listStore.ListState === ListCategory.All">
+      <template v-if="isActive(ListCategory.All)">
         <h1>All</h1>
         <p class="info">Here is all my blogs and notes sorded by date.</p>
       </template>
-      <template v-if="listStore.ListState === ListCategory.Blogs">
+      <template v-if="isActive(ListCategory.Blogs)">
         <h1>Blogs</h1>
         <p class="info">Here is all my blogs sorded by date.</p>
       </template>
-      <template v-if="listStore.ListState === ListCategory.Notes">
+      <template v-if="isActive(ListCategory.Notes)">
         <h1>Notes</h1>
         <p class="info">Here is all my notes sorded by date.</p>
       </template>
-      <template v-if="listStore.ListState === ListCategory.More">
+      <template v-if="isActive(ListCategory.More)">
         <h1>More</h1>
         <p class="info">Here is all </p>
       </template>
       <div class="nav">
-        <!-- <ListHeaderItem @click="goTo('/')">
-          <template #icon>
-            <IconTerminal />
-          </template>
-          <template #heading>
-            cd ..
-          </template>
-        </ListHeaderItem> -->
-        <ListHeaderItem @click="goTo(ListCategory.All)">
+        <ListHeaderItem @click="goTo(ListCategory.All)" :is-active="isActive(ListCategory.All)">
           <template #icon>
             <IconArchive />
           </template>
@@ -66,7 +63,7 @@ const goTo = (path: ListCategory | '/') => {
             All
           </template>
         </ListHeaderItem>
-        <ListHeaderItem @click="goTo(ListCategory.Blogs)">
+        <ListHeaderItem @click="goTo(ListCategory.Blogs)" :is-active="isActive(ListCategory.Blogs)">
           <template #icon>
             <IconGame />
           </template>
@@ -74,7 +71,7 @@ const goTo = (path: ListCategory | '/') => {
             Blogs
           </template>
         </ListHeaderItem>
-        <ListHeaderItem @click="goTo(ListCategory.Notes)">
+        <ListHeaderItem @click="goTo(ListCategory.Notes)" :is-active="isActive(ListCategory.Notes)">
           <template #icon>
             <IconFile />
           </template>
@@ -82,7 +79,7 @@ const goTo = (path: ListCategory | '/') => {
             Notes
           </template>
         </ListHeaderItem>
-        <ListHeaderItem @click="goTo(ListCategory.More)">
+        <ListHeaderItem @click="goTo(ListCategory.More)" :is-active="isActive(ListCategory.More)">
           <template #icon>
             <IconMore />
           </template>
@@ -109,9 +106,6 @@ img {
   width: var(--img-size);
   height: var(--img-size);
   border-radius: 50%;
-}
-
-img:hover {
   cursor: pointer;
 }
 

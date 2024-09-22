@@ -1,9 +1,12 @@
+<script setup lang="ts">
+defineProps(['isActive'])
+</script>
 <template>
   <div class="item">
     <li>
       <slot name="icon"></slot>
     </li>
-    <span>
+    <span :class="{ active: isActive }">
       <slot name="heading"></slot>
     </span>
   </div>
@@ -14,17 +17,21 @@
   user-select: none;
   display: flex;
   align-items: center;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   /* background-color: red */
 }
 
-span{
+span {
   margin-left: 0.2em;
   background: linear-gradient(to right, var(--color-text), var(--color-text)) no-repeat right bottom;
   background-size: 0 1px;
   transition: background-size 0.3s ease-in-out;
 }
-.item:hover span{
+.active {
+  background-size: 100% 1px;
+}
+
+.item:hover span {
   background-position-x: left;
   background-size: 100% 1px;
 }
@@ -42,4 +49,5 @@ li {
   span {
     display: none;
   }
-}</style>
+}
+</style>
