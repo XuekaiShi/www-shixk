@@ -6,15 +6,20 @@ import IconGame from '../icons/IconGame.vue'
 import IconFile from '../icons/IconFile.vue'
 import IconMore from '../icons/IconMore.vue'
 import router from '@/router';
+import { useListStore } from '@/stores/listState';
+import { ListCategory } from '@/types/list.d';
+const listStore = useListStore();
 
-const goToViews = () => {
+const goToViews = (path: ListCategory) => {
+  listStore.ListState = path;
+  console.log(listStore.ListState)
   router.push("posts")
 }
 </script>
 
 <template>
   <main>
-    <HomeItem @click="goToViews()">
+    <HomeItem @click="goToViews(ListCategory.All)">
       <template #icon>
         <IconArchive></IconArchive>
       </template>
@@ -25,7 +30,7 @@ const goToViews = () => {
         {{ $t('home.all.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews()">
+    <HomeItem @click="goToViews(ListCategory.Blogs)">
       <template #icon>
         <IconGame></IconGame>
       </template>
@@ -36,7 +41,7 @@ const goToViews = () => {
         {{ $t('home.blog.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews()">
+    <HomeItem @click="goToViews(ListCategory.Notes)">
       <template #icon>
         <IconFile></IconFile>
       </template>
@@ -47,7 +52,7 @@ const goToViews = () => {
         {{ $t('home.notes.details') }}
       </template>
     </HomeItem>
-    <HomeItem @click="goToViews()">
+    <HomeItem @click="goToViews(ListCategory.More)">
       <template #icon>
         <IconMore></IconMore>
       </template>

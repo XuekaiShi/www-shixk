@@ -28,7 +28,7 @@ const changePosition = () => {
     listPosition.value = -75
   }
 }
-watch(listStore, changePosition)
+watch(listStore, changePosition, { immediate: true })
 
 </script>
 <template>
