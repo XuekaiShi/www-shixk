@@ -69,6 +69,7 @@
 .abstract {
   color: var(--color-info-1);
   font-style: italic;
+  /* margin-top: 3rem; */
 }
 
 .date {
