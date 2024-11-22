@@ -1,6 +1,7 @@
 FROM node:latest AS frontend-builder
 WORKDIR /build-app
 COPY . .
+RUN npm config set registry https://registry.npmmirror.com
 RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm run build
