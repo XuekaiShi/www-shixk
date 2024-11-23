@@ -9,60 +9,35 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Test1
-        run: pwd
+  # github-pages:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+  #     - name: Test1
+  #       run: pwd
 
-      - name: Install dependencies
-        run: pnpm install
+  #     - name: Install pnpm
+  #       run: npm install -g pnpm
 
-      - name: Build
-        run: pnpm build
+  #     - name: Install dependencies
+  #       run: pnpm install
 
-      - name: Test2
-        run: ls -a
+  #     - name: Build
+  #       run: pnpm build
 
-      - name: Github Pages Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ./dist
+  #     - name: Test2
+  #       run: ls -a
 
-        # with:
-        #   fetch-depth: 0
-
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: '18.x'
-
-#       - name: 缓存依赖
-#         uses: actions/cache@v2
-#         id: yarn-cache
-#         with:
-#           path: |
-#             **/node_modules
-#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-#           restore-keys: |
-#             ${{ runner.os }}-yarn-
-#       - name: 安装依赖
-#         if: steps.yarn-cache.outputs.cache-hit != 'true'
-#         run: yarn install --frozen-lockfile
-
-#       - name: 构建
-#         run: yarn build
-#       - name: 发布到Github Pages
-#         uses: crazy-max/ghaction-github-pages@v4.0.0
-#         with:
-#           target_branch: gh-pages
-#           build_dir: ./dist
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: Github Pages Deploy
+  #       uses: JamesIves/github-pages-deploy-action@v4
+  #       with:
+  #         branch: gh-pages
+  #         folder: ./dist
