@@ -15,6 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test1
+        run: pwd
+
       - name: Install pnpm
         run: npm install -g pnpm
 
@@ -26,8 +29,10 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist
+          folder: ./dist
 
+      - name: Test2
+        run: pwd
         # with:
         #   fetch-depth: 0
 
