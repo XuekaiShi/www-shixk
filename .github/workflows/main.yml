@@ -9,35 +9,35 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-  # github-pages:
+  # deploy:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v4
 
-  #     - name: Test1
-  #       run: pwd
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  #     - name: Install pnpm
-  #       run: npm install -g pnpm
+      - name: Test1
+        run: pwd
 
-  #     - name: Install dependencies
-  #       run: pnpm install
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-  #     - name: Build
-  #       run: pnpm build
+      - name: Install dependencies
+        run: pnpm install
 
-  #     - name: Test2
-  #       run: ls -a
+      - name: Build
+        run: pnpm build
 
-  #     - name: Github Pages Deploy
-  #       uses: JamesIves/github-pages-deploy-action@v4
-  #       with:
-  #         branch: gh-pages
-  #         folder: ./dist
+      - name: Test2
+        run: ls -a
+
+      - name: Github Pages Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./dist
