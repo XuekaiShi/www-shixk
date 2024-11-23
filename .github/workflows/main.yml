@@ -21,10 +21,14 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies and Build
-        run: 
-          pnpm install
-          pnpm build
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Test2
+        run: ls -a
 
       - name: Github Pages Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -32,8 +36,6 @@ jobs:
           branch: gh-pages
           folder: ./dist
 
-      - name: Test2
-        run: pwd
         # with:
         #   fetch-depth: 0
 
