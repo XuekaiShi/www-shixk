@@ -22,8 +22,9 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install dependencies and Build
-        run: pnpm install
-             pnpm build
+        run: 
+          pnpm install
+          pnpm build
 
       - name: Github Pages Deploy
         uses: JamesIves/github-pages-deploy-action@v4
