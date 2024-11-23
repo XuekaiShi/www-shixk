@@ -22,8 +22,8 @@ jobs:
           script: |
             cd ${{ secrets.DEPLOY_PATH }}
             git pull origin main
-            docker build -t www-shixk:v1 .
-            docker run --name www-shixk -dp 80:80 www-shixk:v1
+            sudo docker build -t www-shixk:v1 .
+            sudo docker run --name www-shixk -dp 80:80 www-shixk:v1
 
   github-pages:
     runs-on: ubuntu-latest
