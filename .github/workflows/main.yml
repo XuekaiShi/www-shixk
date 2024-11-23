@@ -9,11 +9,21 @@ permissions:
   contents: write
 
 jobs:
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }} 
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            git pull origin main
+            docker build -t www-shixk:v1 .
+            docker run --name www-shixk -dp 80:80 www-shixk:v1
 
   github-pages:
     runs-on: ubuntu-latest
